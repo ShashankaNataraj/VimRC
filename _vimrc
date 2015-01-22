@@ -1,16 +1,23 @@
+"Init Pathogen
 execute pathogen#infect()
+"Show line numbers always
 :set nu!
+"Set the theme
 syntax enable
 set background=dark
 colorscheme codeschool
-autocmd vimenter * NERDTree MyAsup 
-map <C-n> :NERDTreeToggle<CR>
+"Show nerdtree on open
+autocmd vimenter * NERDTree MyAsup
+"Toggle text wrapping off
+:set wrap!
+"set tabstops to 4
+setlocal tabstop=4
+"Use the defined font instead of the default one
 if has('gui_running')
   set guifont=Courier_New:h9:cANSI
 endif
 filetype plugin on
-:let mapleader=","
-
+"Enable swapping of lines with Ctrl + Down, Ctrl + Up instead off ddp and ddkp
 function! s:swap_lines(n1, n2)
     let line1 = getline(a:n1)
     let line2 = getline(a:n2)
@@ -38,5 +45,13 @@ function! s:swap_down()
     exec n + 1
 endfunction
 
+"============Custom keybindings=============
+"Map leader to ,
+:let mapleader=","
+
 noremap <silent> <c-up> :call <SID>swap_up()<CR>
 noremap <silent> <c-down> :call <SID>swap_down()<CR>
+map <C-n> :NERDTreeToggle<CR>
+
+"============Custom keybindings end=========
+:autocmd BufWritePost * !start c:\build.bat
