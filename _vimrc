@@ -52,6 +52,7 @@ endfunction
 noremap <silent> <c-up> :call <SID>swap_up()<CR>
 noremap <silent> <c-down> :call <SID>swap_down()<CR>
 map <C-n> :NERDTreeToggle<CR>
+<<<<<<< HEAD
 "JS-Beautify plugin
   map <c-f> :call JsBeautify()<cr>
   " or
@@ -69,3 +70,7 @@ map <C-n> :NERDTreeToggle<CR>
 
 "CTRL P config
 noremap <C-a> :CtrlP C:/Softwares/apache-tomcat-6.0.37/apache-tomcat-6.0.37/webapps/myautosupport/ui/<CR>
+=======
+
+"============Custom keybindings end=========
+:autocmd BufWritePost * !start c:\build.bat
