@@ -1,17 +1,23 @@
 "Init Pathogen
 execute pathogen#infect()
+
 "Show line numbers always
 :set nu!
+
 "Set the theme
 syntax enable
 set background=dark
-colorscheme apprentice 
+colorscheme zenburn 
+
 "Show nerdtree on open
 autocmd vimenter * NERDTree MyAsup
+
 "Toggle text wrapping off
 :set wrap!
+
 "set tabstops to 4
 setlocal tabstop=4
+
 "Use the defined font instead of the default one
 if has('gui_running')
   set guifont=Consolas:h9:cANSI
